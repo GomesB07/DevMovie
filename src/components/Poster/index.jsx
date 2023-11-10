@@ -9,19 +9,17 @@ const Poster = ({ item }) => {
   const [newItem, setNewItem] = useState([])
 
   useEffect(() => {
-    const category = item.title
-      ? 'filme'
-      : item.profile_path
-      ? 'pessoa'
-      : 'serie'
-    setNewItem({ ...item, category })
+    const mediaType = item.title ? 'movie' : item.profile_path ? 'person' : 'tv'
+    setNewItem({ ...item, media_type: mediaType })
   }, [item])
 
   return (
     <>
       {newItem.poster_path || newItem.profile_path ? (
         <Container
-          onClick={() => navigate(`/detalhe/${newItem.category}/${newItem.id}`)}
+          onClick={() =>
+            navigate(`/detalhe/${newItem.media_type}/${newItem.id}`)
+          }
         >
           <img
             src={getImages(newItem.poster_path || newItem.profile_path)}

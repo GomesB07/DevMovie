@@ -33,20 +33,30 @@ const Detail = () => {
   const params = useParams()
 
   useEffect(() => {
-    Promise.all([
-      detailById(params),
-      movieVideos(params.id),
-      movieCredits(params),
-      detailSimilar(params)
-    ])
-      .then(([movie, videos, credits, similar]) => {
-        setMovie(movie)
-        setVideos(videos)
-        setCredits(credits)
-        setSimilar(similar)
-        setIsPeople(movie.category === 'pessoa')
-      })
-      .catch((error) => console.error(error))
+    window.scrollTo(0, 0)
+  }, [movie])
+
+  useEffect(() => {
+    if (params.mediaType === 'person') {
+      Promise.all([detailById(params)])
+        .then(([movie]) => setMovie(movie))
+        .catch((error) => console.error(error))
+    } else {
+      Promise.all([
+        detailById(params),
+        movieVideos(params.id),
+        movieCredits(params),
+        detailSimilar(params)
+      ])
+        .then(([movie, videos, credits, similar]) => {
+          setMovie(movie)
+          setVideos(videos)
+          setCredits(credits)
+          setSimilar(similar)
+          setIsPeople(movie.media_type === 'person')
+        })
+        .catch((error) => console.error(error))
+    }
   }, [params])
 
   useEffect(() => {
@@ -61,7 +71,7 @@ const Detail = () => {
     <>
       {movie && (
         <>
-          {movie.category !== 'pessoa' ? (
+          {movie.media_type !== 'person' ? (
             <>
               <Background image={getImages(movie.backdrop_path)} />
               <Container>
@@ -130,20 +140,6 @@ const Detail = () => {
                   </Bio>
                 </Info>
               </Container>
-              {/* <ContainerMovies>
-                {videos &&
-                  videos.map((video) => (
-                    <div key={video.id}>
-                      <h4>{movie.name}</h4>
-                      <iframe
-                        src={`https://www.youtube.com/embed/${video.key}`}
-                        title="Youtube Video Player"
-                        height="500px"
-                        width="100%"
-                      ></iframe>
-                    </div>
-                  ))}
-              </ContainerMovies> */}
               {cast && <Slider info={cast} title="Participações" />}
             </>
           )}

@@ -172,6 +172,8 @@ export const ContainerForm = styled.div`
       height: 30px;
       border: none;
       border-radius: 5px;
+      background-color: #189b20;
+      color: #fff;
       cursor: pointer;
     }
   }
@@ -179,14 +181,12 @@ export const ContainerForm = styled.div`
   @media (max-width: 900px) {
     z-index: 10;
     form {
-      /* background-color: red; */
       .input {
         width: 60%;
       }
       .button {
         width: 25%;
         background-color: green;
-        color: #fff;
       }
     }
   }

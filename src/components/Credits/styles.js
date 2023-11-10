@@ -34,9 +34,29 @@ export const Container = styled.h2`
     }
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
+    width: 95%;
+    max-width: 10000px;
+    height: 250px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: relative;
+    padding: 10px 20px;
+
+    div {
+      height: 90%;
+      width: auto;
+      img {
+        height: 80%;
+        border-radius: 8px;
+      }
+      h2 {
+        font-size: 10px;
+      }
+    }
   }
 `

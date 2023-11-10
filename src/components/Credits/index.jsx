@@ -12,10 +12,11 @@ const Credits = ({ credits }) => {
       <Title>Créditos</Title>
       {credits && (
         <Container>
+          {/* <div className="div-carrossel"> */}
           {credits.slice(0, 5).map((artist) => (
             <div
               key={artist.id}
-              onClick={() => navigate(`/detalhe/pessoa/${artist.id}`)}
+              onClick={() => navigate(`/detalhe/person/${artist.id}`)}
             >
               <img src={getImages(artist.profile_path)} />
               <div>
@@ -23,6 +24,7 @@ const Credits = ({ credits }) => {
               </div>
             </div>
           ))}
+          {/* </div> */}
         </Container>
       )}
     </>

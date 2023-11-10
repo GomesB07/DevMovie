@@ -7,28 +7,29 @@ import Modal from '../Modal'
 import Sinopse from '../Sinopse'
 import { Background, Container, Info, ContainerButtons, Poster } from './styles'
 
-const StarMovie = ({ info, abaMovie }) => {
+const StarMovie = ({ info, MoviesAndSeries }) => {
   const navigate = useNavigate()
   const [showModal, setShowModal] = useState(false)
 
   return (
     <>
       {info && (
-        <Background abaMovie={abaMovie} image={getImages(info.backdrop_path)}>
+        <Background
+          MoviesAndSeries={MoviesAndSeries}
+          image={getImages(info.backdrop_path)}
+        >
           {showModal && <Modal movieId={info.id} setShowModal={setShowModal} />}
-          <Container abaMovie={abaMovie}>
-            <Info abaMovie={abaMovie}>
+          <Container MoviesAndSeries={MoviesAndSeries}>
+            <Info MoviesAndSeries={MoviesAndSeries}>
               <h1>{info.title || info.name}</h1>
-              {abaMovie || <Sinopse text={info.overview} maxWords={25} />}
+              {MoviesAndSeries || (
+                <Sinopse text={info.overview} maxWords={25} />
+              )}
 
               <ContainerButtons>
                 <Button
                   isRed
-                  onClick={() =>
-                    navigate(
-                      `/detalhe/${info.title ? 'filme' : 'serie'}/${info.id}`
-                    )
-                  }
+                  onClick={() => navigate(`/detalhe/movie/${info.id}`)}
                 >
                   Assista Agora
                 </Button>
@@ -37,7 +38,7 @@ const StarMovie = ({ info, abaMovie }) => {
                 </Button>
               </ContainerButtons>
             </Info>
-            <Poster abaMovie={abaMovie}>
+            <Poster MoviesAndSeries={MoviesAndSeries}>
               <img src={getImages(info.poster_path)} alt="capa do filme" />
             </Poster>
           </Container>

@@ -11,8 +11,8 @@ const scale = keyframes`
 
 export const Background = styled.div`
   background-image: url(${(props) => props.image});
-  height: ${(props) => (props.abaMovie ? '80vh' : '100vh')};
-  background-position: ${(props) => (props.abaMovie ? 'top' : 'center')};
+  height: ${(props) => (props.MoviesAndSeries ? '80vh' : '100vh')};
+  background-position: ${(props) => (props.MoviesAndSeries ? 'top' : 'center')};
   background-size: cover;
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@ export const Background = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: ${(props) => (props.abaMovie ? '80%' : '100%')};
+    height: ${(props) => (props.MoviesAndSeries ? '80%' : '100%')};
     background-color: rgba(0, 0, 0, 0.5);
     background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
   }
@@ -57,8 +57,8 @@ export const Container = styled.div`
   height: 100%;
   max-width: 1500px;
   display: flex;
-  align-items: ${(props) => (props.abaMovie ? 'flex-end' : 'center')};
-  flex-direction: ${(props) => (props.abaMovie ? 'row-reverse' : 'row')};
+  align-items: flex-end;
+  flex-direction: ${(props) => (props.MoviesAndSeries ? 'row-reverse' : 'row')};
   justify-content: space-evenly;
 
   @media (max-width: 800px) {
@@ -75,13 +75,14 @@ export const Container = styled.div`
 
 export const Info = styled.div`
   z-index: 2;
-  padding: 20px;
-  width: ${(props) => (props.abaMovie ? '100%' : '50%')};
-  padding: 0 50px;
+  width: ${(props) => (props.MoviesAndSeries ? '100%' : '70%')};
+  padding: 30px;
+
   h1 {
     font-size: 45px;
     font-weight: 700;
     color: #fff;
+    margin: ${(props) => (props.MoviesAndSeries ? '20px 0' : '0')};
   }
   p {
     font-size: 20px;
@@ -109,10 +110,7 @@ export const Info = styled.div`
       margin: 10px 0 15px 0;
       width: 100%;
     }
-  }
-
-  @media (max-width: 900px) {
-    width: 90%;
+    padding: 0 20px;
   }
 `
 
@@ -131,8 +129,8 @@ export const Poster = styled.div`
     width: 350px;
     border-radius: 30px;
     animation: ${scale} 0.5s linear;
-    margin-bottom: ${(props) => (props.abaMovie ? '15px' : '')};
-    display: ${(props) => (props.abaMovie ? 'none' : '')};
+    margin-bottom: ${(props) => (props.MoviesAndSeries ? '15px' : '')};
+    display: ${(props) => (props.MoviesAndSeries ? 'none' : '')};
 
     @media (max-width: 800px) {
       display: none;

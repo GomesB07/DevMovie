@@ -15,6 +15,13 @@ export const homeTopMovies = async () => {
   return results
 }
 
+export const homePopularMovies = async () => {
+  const {
+    data: { results }
+  } = await api.get('movie/popular')
+  return results
+}
+
 export const homeTopSeries = async () => {
   const {
     data: { results }
@@ -48,33 +55,20 @@ export const movieVideos = async (movieId) => {
 export const movieCredits = async (params) => {
   const {
     data: { cast }
-  } = await api.get(
-    `/${params.category === 'filme' ? 'movie' : 'tv'}/${params.id}/credits`
-  )
+  } = await api.get(`/${params.mediaType}/${params.id}/credits`)
   return cast
 }
 
 export const detailSimilar = async (params) => {
   const {
     data: { results }
-  } = await api.get(
-    `/${params.category === 'filme' ? 'movie' : 'tv'}/${params.id}/similar`
-  )
+  } = await api.get(`/${params.mediaType}/${params.id}/similar`)
   return results
 }
 
 export const detailById = async (params) => {
-  const { data } = await api.get(
-    `/${
-      params.category === 'filme'
-        ? 'movie'
-        : params.category === 'pessoa'
-        ? 'person'
-        : 'tv'
-    }/${params.id}`
-  )
-
-  return { ...data, category: params.category }
+  const { data } = await api.get(`/${params.mediaType}/${params.id}`)
+  return { ...data, media_type: params.mediaType }
 }
 
 export const combinedCredits = async (personId) => {

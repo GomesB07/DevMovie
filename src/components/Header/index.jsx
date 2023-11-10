@@ -19,14 +19,15 @@ const Header = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    reset
   } = useForm()
 
   const onSubmit = async (data) => {
-    const response = await getSearch(data)
-    navigate('/pesquisa', { state: response })
+    const infos = await getSearch(data)
+    navigate('/pesquisa', { state: { infos, data } })
     setSearchView(false)
-    // reset()
+    reset()
   }
 
   window.onscroll = () => {
@@ -38,9 +39,13 @@ const Header = () => {
     }
   }
 
-  const sla = () => {
+  const openSearch = () => {
     setMenuView(false)
     setSearchView(true)
+  }
+
+  const closeMenu = () => {
+    setMenuView(false)
   }
 
   return (
@@ -49,22 +54,25 @@ const Header = () => {
         <img src={Logo} alt="logo" onClick={() => navigate('/')} />
 
         <Menu menuView={menuView}>
-          <CloseIcon
-            className="close-icon"
-            onClick={() => setMenuView(false)}
-          />
+          <CloseIcon className="close-icon" onClick={() => closeMenu()} />
 
           <Li isActive={pathname === '/'}>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={() => closeMenu()}>
+              Home
+            </Link>
           </Li>
           <Li isActive={pathname.includes('filmes')}>
-            <Link to="/filmes">Filmes</Link>
+            <Link to="/filmes" onClick={() => closeMenu()}>
+              Filmes
+            </Link>
           </Li>
           <Li isActive={pathname.includes('series')}>
-            <Link to="/series">Séries</Link>
+            <Link to="/series" onClick={() => closeMenu()}>
+              Séries
+            </Link>
           </Li>
           <Li>
-            <SearchIcon onClick={() => sla()} />
+            <SearchIcon onClick={() => openSearch()} />
           </Li>
         </Menu>
 

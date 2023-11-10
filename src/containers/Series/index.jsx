@@ -11,17 +11,16 @@ const Series = () => {
     const getMovies = async () => {
       const data = await allSeries()
       setSeries(
-        data.data.results.map((result) => ({ ...result, category: 'serie' }))
+        data.data.results.map((result) => ({ ...result, aloBruno: 'tv' }))
       )
     }
 
     getMovies()
   }, [])
-  console.log(series[0])
 
   return (
     <>
-      <StarMovie info={series[0]} abaMovie={true} />
+      <StarMovie info={series[0]} MoviesAndSeries />
       <Card info={series} />
     </>
   )

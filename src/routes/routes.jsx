@@ -16,7 +16,7 @@ const myRoutes = () => {
           <Route path="/" element={<Home />} />
           <Route path="/filmes" element={<Movies />} />
           <Route path="/series" element={<Series />} />
-          <Route path="/detalhe/:category/:id" element={<Detail />} />
+          <Route path="/detalhe/:mediaType/:id" element={<Detail />} />
           <Route path="/pesquisa" element={<Search />} />
         </Route>
       </Routes>

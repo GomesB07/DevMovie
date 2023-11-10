@@ -11,7 +11,7 @@ const Movies = () => {
     const getMovies = async () => {
       const data = await allMovies()
       setMovies(
-        data.data.results.map((result) => ({ ...result, category: 'filme' }))
+        data.data.results.map((result) => ({ ...result, mediaType: 'movie' }))
       )
     }
 
@@ -20,7 +20,7 @@ const Movies = () => {
 
   return (
     <>
-      <StarMovie info={movies[0]} abaMovie={true} />
+      <StarMovie info={movies[0]} MoviesAndSeries />
       <Card info={movies} />
     </>
   )
