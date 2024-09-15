@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# DevMovie
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sobre o Projeto
+  DevMovie é uma aplicação front end baseada em streaming de filmes/séries, onde o usuário pode navegar pelo catálogo e, ao selecionar o título desejado, conferir a sinopse, enredo e trailer.
 
-## Available Scripts
+## Layout Mobile
 
-In the project directory, you can run:
+<img src="https://github.com/GomesB07/OrderBurgerApi/assets/93354781/d23f66b4-bed1-4469-931c-52fda1172938" width="300px" />
+<img src="https://github.com/GomesB07/OrderBurgerApi/assets/93354781/29497236-49e9-4ccf-8810-c34d5ded8126" width="300px" />
 
-### `npm start`
+## Layout Web
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img src="https://github.com/GomesB07/OrderBurgerApi/assets/93354781/03d62af3-de4a-4dbd-8e0b-abb4e247170e" width="500px" />
+<img src="https://github.com/GomesB07/OrderBurgerApi/assets/93354781/1dff3eeb-c16b-4371-ad41-f63283d35dc3" width="500px" />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Tecnologias utilizadas
 
-### `npm test`
+## Back end
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.Js
+- Express
 
-### `npm run build`
+# Como executar o projeto
+Pré-requisitos: npm / yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# Clonar o repositório
+git clone https://github.com/GomesB07/OrderBurgerApi
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Executar o projeto
+(npm/yarn) dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Front end OrderBurger
 
-### `npm run eject`
+https://github.com/GomesB07/OrderBurgerFront
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Autor
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Bruno Luis (GomesB07)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<img src="https://github.com/GomesB07/OrderBurgerApi/assets/93354781/ab950a69-af6d-4bec-9263-d1a7a807ac52" width="200px" />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+https://linkedin.com/in/brunoluis07
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
