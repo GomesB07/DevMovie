@@ -3,15 +3,26 @@
 # Sobre o Projeto
   DevMovie é uma aplicação front end baseada em streaming de filmes/séries, onde o usuário pode navegar pelo catálogo e, ao selecionar o título desejado, conferir a sinopse, enredo e trailer.
 
-## Layout Mobile
 
-<img src="https://github.com/GomesB07/DevMovie/blob/master/src/assets/printProject/iPhone%2013%20Pro%20dev%20movie.png" width="300px" />
-<img src="https://github.com/GomesB07/DevMovie/blob/master/src/assets/printProject/iPhone%2013%20Pro%20dev%20movie%20(1).png" width="300px" />
 
-## Layout Web
+<table>
+  <tr>
+    <td><img src="https://github.com/GomesB07/DevMovie/blob/master/src/assets/printProject/iPhone%2013%20Pro%20dev%20movie.png" width="300px" /></td>
+    <td><img src="https://github.com/GomesB07/DevMovie/blob/master/src/assets/printProject/iPhone%2013%20Pro%20dev%20movie%20(1).png" width="300px" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/GomesB07/DevMovie/blob/master/src/assets/printProject/Macbook%20Air%20dev%20movie.png" width="500px" /></td>
+    <td><img src="https://github.com/GomesB07/DevMovie/blob/master/src/assets/printProject/Macbook-Air-dev-movie-nine.vercel.app.png" width="500px" /></td>
+  </tr>
+</table>
 
-<img src="https://github.com/GomesB07/DevMovie/blob/master/src/assets/printProject/Macbook%20Air%20dev%20movie.png" width="500px" />
-<img src="https://github.com/GomesB07/DevMovie/blob/master/src/assets/printProject/Macbook-Air-dev-movie-nine.vercel.app.png" width="500px" />
+
+
+
+
+
+
+
 
 # Tecnologias utilizadas
 
